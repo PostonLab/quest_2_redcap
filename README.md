@@ -28,8 +28,8 @@ It handles cleaning, pivoting test results, renaming columns using a lookup dict
 
 ### Option 1: Quick setup with `setup.sh`
 ```bash
-git clone <https://github.com/PostonLab/quest_2_redcap>
-cd <your-repo-folder>
+git clone https://github.com/PostonLab/quest_2_redcap
+cd quest_2_redcap
 chmod +x setup.sh
 ./setup.sh
 ```
