@@ -183,10 +183,18 @@ def main(input_file: str, lookup_file: str, output_file: str):
 # Entry point
 # ----------------------------
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process lab CSV into REDCap format.")
+    parser = argparse.ArgumentParser(description="Process Quest labs into REDCap format.")
+
     parser.add_argument("input_file", help="Path to input CSV (Quest export).")
-    parser.add_argument("lookup_file", help="Path to lookup CSV (quest_col → redcap_col).")
-    parser.add_argument("output_file", help="Path to save the processed output CSV.")
+    parser.add_argument("output_file", help="Path to save processed CSV.")
+
+    # Optional argument with default
+    parser.add_argument(
+        "--lookup_file",
+        default="redcap_datadict.csv",
+        help="Path to lookup CSV (quest_col → redcap_col). Default: redcap_datadict.csv"
+    )
+
     args = parser.parse_args()
 
     main(args.input_file, args.lookup_file, args.output_file)
