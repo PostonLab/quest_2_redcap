@@ -35,12 +35,12 @@ chmod +x setup.sh
 ```
 
 This will:
-- Create a Python virtual environment in `./venv`
+- Create a Python virtual environment in `./quest`
 - Install all required dependencies from `requirements.txt`
 
 To activate the environment later:
 ```bash
-source venv/bin/activate
+source quest/bin/activate
 ```
 
 ---
@@ -49,8 +49,8 @@ source venv/bin/activate
 If you don’t want to use `setup.sh`:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv quest
+source quest/bin/activate
 pip install -r requirements.txt
 ```
 
