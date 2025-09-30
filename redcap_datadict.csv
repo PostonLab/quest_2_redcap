@@ -1,0 +1,74 @@
+redcap_col,field_label,quest_col
+id,,
+redcap_event_name,,
+redcap_repeat_instrument,,
+redcap_repeat_instance,,
+lr_missing,Is the record permanently missing?,
+lr_missing_why,Why is the record permanently missing?,
+lr_missing_why_other,"Please explain the ""Other"" reason for the record's absence.",
+lr_blood_draw_date,date blood draw,
+lr_blood_draw_time,blood draw time,
+lr_fasting,check if fasting for blood draw,
+lr_last_meal_date,date of last meal,
+lr_last_meal_time,time of last meal,
+lr_last_meal_calories,calories,
+lr_hiv,1/0 (positive/negative) for hiv,
+lr_hiv_cml,hiv (range: 20-10 million copies/ml) = viral load,
+lr_hiv_lcml,hiv (range: 1.30-7.0 log copies/ml),
+lr_hiv_genotype,"if detected, it is genotype 1",
+lr_hcv,1/0 (positive/negative) for hepatitis c virus,
+lr_hcv_cml,hcv (copies/ml),
+lr_hcv_iuml,hcv (range: 15-100 million iu/ml),
+lr_hcv_log_iuml,hcv (range: 1.18-8.00 log iu/ml),
+lr_hcv_genotype,if detected,
+lr_hbv,1/0 (positive /negative) for hepatitis b virus,
+lr_cbc_wbc,"complete blood count, white blood count (range: 3.8-10.8 thousand/ul) ",White Blood Cell Count
+lr_cbc_rbc,"complete blood count, red blood count (range: 4.2-5.8 million/ul)",Red Blood Cell Count
+lr_cbc_hgb,"complete blood count, hemoglobin (range: 13.2-17.1 g/dl)",Hemoglobin
+lr_cbc_hct,"complete blood count, hematocrit (range: 38.5-50.0%)",Hematocrit
+lr_cbc_mcv,"complete blood count, mean corpuscular volume (range: 80.0-100.0 fl)",Mcv
+lr_cbc_mch,"complete blood count, mean corpuscular hemoglobin (range: 27.0-33.0 pg)",Mch
+lr_cbc_mchc,"complete blood count, mean corpuscular hemoglobin concentration (range: 32.0-36.0 g/dl)",Mchc
+lr_cbc_rdw,"complete blood count, red cell distribution width (range: 11.0-15.0%)",Rdw
+lr_cbc_plt,"complete blood count, platelet count (range: 140-400 thousand/ul)",Platelet Count
+lr_cbc_mpv,"complete blood count, mean platelet volume (range: 7.5-12.5 fl)",Mpv
+lr_wbc_neut_abs,neutrophils absolute value (range: 1500-1700 cell/ul),Absolute Neutrophils
+lr_wbc_lymph_abs,lymphocytes absolute value (range: 850-3900 cell/ul),Absolute Lymphocytes_wbc
+lr_wbc_mono_abs,monocytes absolute value (range: 200-950 cell/ul),Absolute Monocytes
+lr_wbc_eos_abs,eosinophils absolute value (range: 15-500 cell/ul),Absolute Eosinophils
+lr_wbc_baso_abs,basophils absolute value (range: 0-200 cell/ul),Absolute Basophils
+lr_wbc_neut,neutrophils %,Neutrophils
+lr_wbc_lymph,lymphocytes %,Lymphocytes
+lr_wbc_mono,monocytes %,Monocytes
+lr_wbc_eos,eosinophils %,Eosinophils
+lr_wbc_baso,basophils %,Basophils
+lr_hepatic_protein_tot,"hepatic function, protein, total (g/dl)","Protein, Total"
+lr_hepatic_albumin,"hepatic function, albumin (range: 3.6-5.1 g/dl)",Albumin
+lr_hepatic_globulin,"hepatic function, globulin (>19 years range: 1.9-3.7 g/dl)",Globulin
+lr_hepatic_agr,"hepatic function, albumin globulin ratio, (range: 1.0-2.5 calc)",Albumin/Globulin Ratio
+lr_hepatic_bili_total,"hepatic function, bilirubin total (range: 0.2-1.2 mg/dl)","Bilirubin, Total"
+lr_hepatic_alp,"hepatic function, alkaline phosphatase (20-49 years range: 36-130 u/l, >49 years range: 35-144 u/l)",Alkaline Phosphatase
+lr_hepatic_ast,"hepatic function, aspartate aminotransferase (range: 10-35 u/l)",AST
+lr_hepatic_alt,"hepatic function, alanine aminotransferase (>=20 years range: 9-46 u/l)",ALT
+lr_hepatic_ggt,"hepatic function, gamma-glutamyl transferase (range: 3-70 u/l)",Ggt
+lr_lymph_cd3_percent,cd3 mature t cells (range: 57-85%),% CD3 (Mature T Cells)
+lr_lymph_cd3_abs,cd3 mature t cells absolute value (range: 840-3060 cells/uL),Absolute CD3+ Cells
+lr_lymph_cd4_percent,cd4 helper t cells (range: 30-61%),% CD4
+lr_lymph_cd4_abs,cd4 helper t cells absolute value (range: 490-1740 cells/uL) = t cell count,Absolute CD4+ Cells
+lr_lymph_cd8_percent,cd8 suppressor t cells (range: 12-42%),% CD8
+lr_lymph_cd8_abs,cd8 suppressor t cells absolute value (range: 180-1170 cells/uL),Absolute CD8+ Cells
+lr_lymph_cd4cd8_ratio,cd4/cd8 ratio (range: 0.86-5.0 L),CD4/CD8 Ratio
+lr_lymph_total_abs,total lymphocyte count (range: 850-3900 cells/ul),Absolute Lymphocytes_lymph
+lr_metabolic_glucose,"comprehensive metabolic panel, glucose (range: 65-99 mg/dl)",Glucose
+lr_metabolic_bun,"comprehensive metabolic panel, kidney function, blood urea nitrogen (range: 7-25 mg/dl)",Urea Nitrogen (Bun)
+lr_metabolic_creatinine,"comprehensive metabolic panel, kidney function, creatinine (18-19 years range: 0.6-1.26 mg/dl, 20-49 years range: 0.6-1.35 mg/dl, 50-59 years range: 0.7-1.33 mg/dl, 60-69 years range: 0.7-1.25 mg/dl, 70-79 years range: 0.7-1.18 mg/dl, >79 years range: 0.7-1.11 mg/dl)",Creatinine
+lr_metabolic_egfr,"comprehensive metabolic panel, kidney function, estimated glomerular filtration rate (ml/min)",Egfr
+lr_metabolic_egfr_aa,"comprehensive metabolic panel, kidney function, estimated glomerular filtration rate, african american (ml/min)",Bun/Creatinine Ratio
+lr_metabolic_na,"comprehensive metabolic panel, sodium (range: 135-146 mmol/L)",Sodium
+lr_metabolic_k,"comprehensive metabolic panel, potassium (range: 3.5-5.3 mmol/L)",Potassium
+lr_metabolic_cl,"comprehensive metabolic panel, chloride (range: 98-110 mmol/L)",Chloride
+lr_metabolic_co2,"comprehensive metabolic panel, carbon dioxide (range: 20-32 mmol/L)",Carbon Dioxide
+lr_metabolic_ca,"comprehensive metabolic panel, calcium (>19 years range: 8.6-10.3 mg/dl)",Calcium
+lr_nutrition_b12,"nutrition, vitamin b12 (range: 200-1100 pg/ml)",Vitamin B12
+lr_nutrition_folate,"nutrition, folate (low range: <3.4 ng/ml, borderline range: 3.4-5.4 ng/ml, normal range: >5.4 ng/ml)","Folate, Serum"
+lr_nutrition_prealbumin,"nutrition, prealbumin (adult males range: 21-43 mg/dl)",Prealbumin
