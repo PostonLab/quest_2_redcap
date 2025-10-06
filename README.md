@@ -5,7 +5,7 @@ It handles cleaning, pivoting test results, renaming columns using a lookup dict
 
 ---
 
-## Features
+## 📦 Features
 - Skips Quest CSV headers and reads real data.
 - Cleans patient IDs (removes `LAB_S0`/`LAB-S0` prefixes).
 - Splits `Reported Date` into `lr_blood_draw_date` and `lr_blood_draw_time`.
@@ -24,7 +24,11 @@ It handles cleaning, pivoting test results, renaming columns using a lookup dict
 
 ---
 
-## Installation
+## 🧰 Requirements
+- Python 3.8+
+- pandas
+
+## ⚙️ Installation
 
 ### Option 1: Quick setup with `setup.sh`
 ```bash
@@ -107,10 +111,6 @@ project/
 ```
 
 ---
-
-## Requirements
-- Python 3.8+
-- pandas
 
 ## 🧑‍💻 Author
 
