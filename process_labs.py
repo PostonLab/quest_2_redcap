@@ -119,6 +119,23 @@ def rename_and_align_columns(pivoted_df: pd.DataFrame, mapping: dict, all_redcap
 
     return renamed[final_cols]
 
+# ----------------------------
+# Matching IDs with IDs in the ID file
+# ----------------------------
+def load_and_clean_ids(id_file: str) -> list:
+    id_df = pd.read_csv(id_file)
+    if 'ID' not in id_df.columns:
+        raise ValueError("The ID file must contain a column named 'ID'")
+
+    cleaned_ids = []
+    for raw_id in id_df['ID']:
+        if isinstance(raw_id, str):
+            match = re.search(r'(\d+)', raw_id)
+            if match:
+                num_id = match.group(1).lstrip('0')  # remove leading zeros
+                cleaned_ids.append(num_id)
+    return cleaned_ids
+
 
 # ----------------------------
 # Main function
@@ -173,6 +190,9 @@ def main(input_file: str, lookup_file: str, output_file: str):
 
     if all_patients:
         final_df = pd.concat(all_patients, ignore_index=True)
+        if args.id_file:
+            allowed_ids = load_and_clean_ids(args.id_file)
+            final_df = final_df[final_df['id'].astype(str).isin(allowed_ids)]
         final_df.to_csv(output_file, index=False)
         print(f"✅ Output saved successfully to {output_file}")
     else:
@@ -186,6 +206,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process Quest labs into REDCap format.")
 
     parser.add_argument("input_file", help="Path to input CSV (Quest export).")
+    parser.add_argument("--id_file", help="Optional path to a CSV file containing IDs to filter results.")
     parser.add_argument("output_file", help="Path to save processed CSV.")
 
     # Optional argument with default
