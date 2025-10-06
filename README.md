@@ -56,23 +56,42 @@ pip install -r requirements.txt
 
 ---
 
-## Usage
-
-Run the script with:
+## 🚀 Usage
 
 ```bash
-python process_labs.py INPUT_FILE OUTPUT_FILE [--lookup_file LOOKUP_FILE]
+python process_labs.py <input_file> [--lookup_file LOOKUP] [--output_file OUTPUT] [--id_file IDLIST]
 ```
 
-- `INPUT_FILE`: Quest CSV export (raw data)
-- `OUTPUT_FILE`: Path to save the REDCap-ready CSV
-- `--lookup_file`: (optional) CSV file mapping Quest → REDCap columns  
-  - Defaults to `redcap_datadict.csv`
+### **Arguments**
 
-Example:
+| Argument | Description | Default |
+|-----------|--------------|----------|
+| `<input_file>` | Path to the main Quest lab CSV file | *Required* |
+| `--lookup_file` | Path to the lookup CSV mapping Quest → REDCap columns | `redcap_datadict.csv` |
+| `--output_file` | Path to save the processed output CSV | `all_patients.csv` |
+| `--id_file` | Optional path to CSV containing IDs to filter by | *None* |
+
+---
+
+## 📄 Example ID File Format
+
+```
+ID
+ID, 01447-BB-F
+ID, 01507-MI-F
+ID, 00325-SS-F
+```
+
+The script extracts numeric parts (e.g., `01447` → `1447`) and keeps only those patients in the final CSV.
+
+---
+
+## 🧩 Example Run
+
 ```bash
-python process_labs.py HIVPD23_2025-03-13_16-58-07.csv all_patients.csv --lookup_file new_redcap_datadict.csv
+python process_labs.py HIVPD23_2025-03-13_16-58-07.csv --lookup_file redcap_datadict.csv --output_file filtered_labs.csv --id_file id_list.csv
 ```
+
 
 ---
 
@@ -92,4 +111,12 @@ project/
 ## Requirements
 - Python 3.8+
 - pandas
+
+## 🧑‍💻 Author
+
+Developed by Dimuthu Hemachandra (2025)
+
+For issues or questions, please contact at dimuthu@stanford.edu
+
+---
 
