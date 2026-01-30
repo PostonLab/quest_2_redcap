@@ -205,9 +205,9 @@ def main(input_file: str, lookup_file: str, output_file: str):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process Quest labs into REDCap format.")
 
-    parser.add_argument("input_file", help="Path to input CSV (Quest export).")
+    parser.add_argument("--input_file", help="Path to input CSV (Quest export).")
     parser.add_argument("--id_file", help="Optional path to a CSV file containing IDs to filter results.")
-    parser.add_argument("output_file", help="Path to save processed CSV.")
+    parser.add_argument("--output_file", help="Path to save processed CSV.")
 
     # Optional argument with default
     parser.add_argument(
