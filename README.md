@@ -70,7 +70,7 @@ python process_labs.py <input_file> [--lookup_file LOOKUP] [--output_file OUTPUT
 
 | Argument | Description | Default |
 |-----------|--------------|----------|
-| `<input_file>` | Path to the main Quest lab CSV file | *Required* |
+| `--input_file` | Path to the main Quest lab CSV file | *Required* |
 | `--lookup_file` | Path to the lookup CSV mapping Quest → REDCap columns | `redcap_datadict.csv` |
 | `--output_file` | Path to save the processed output CSV | `all_patients.csv` |
 | `--id_file` | Optional path to CSV containing IDs to filter by | *None* |
@@ -93,7 +93,7 @@ The script extracts numeric parts (e.g., `01447` → `1447`) and keeps only thos
 ## 🧩 Example Run
 
 ```bash
-python process_labs.py HIVPD23_2025-03-13_16-58-07.csv --lookup_file redcap_datadict.csv --output_file filtered_labs.csv --id_file id_list.csv
+python process_labs.py --input_file questdata.csv --lookup_file redcap_datadict.csv --output_file filtered_labs.csv --id_file id_list.csv
 ```
 
 
