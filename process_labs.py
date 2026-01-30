@@ -20,7 +20,7 @@ def load_csv_safely(file_path: str, skiprows: int = 0) -> pd.DataFrame:
 def pivot_patient_results(patient_df: pd.DataFrame) -> pd.DataFrame:
     cols_to_keep = [
         'Patient ID', 'lr_blood_draw_date', 'lr_blood_draw_time',
-        'Result Name', 'Result Value', 'Reported Date', 'Test Order Name'
+        'Result Name', 'Result Value', 'Collected Date', 'Test Order Name'
     ]
     missing_cols = [col for col in cols_to_keep if col not in patient_df.columns]
     if missing_cols:
@@ -45,8 +45,8 @@ def pivot_patient_results(patient_df: pd.DataFrame) -> pd.DataFrame:
     )
     if duplicates.any():
         duplicate_rows = sub[duplicates]
-        sub['Reported Date'] = pd.to_datetime(sub['Reported Date'], errors='coerce')
-        sub = sub.sort_values('Reported Date').drop_duplicates(
+        sub['Collected Date'] = pd.to_datetime(sub['Collected Date'], errors='coerce')
+        sub = sub.sort_values('Collected Date').drop_duplicates(
             subset=['Patient ID', 'lr_blood_draw_date', 'lr_blood_draw_time', 'Result Name'],
             keep='last'
         )
@@ -60,11 +60,11 @@ def pivot_patient_results(patient_df: pd.DataFrame) -> pd.DataFrame:
                 (sub['Result Name'] == result_name) &
                 (sub['lr_blood_draw_date'] == row['lr_blood_draw_date']) &
                 (sub['lr_blood_draw_time'] == row['lr_blood_draw_time'])
-            ]['Reported Date'].iloc[0]
+            ]['Collected Date'].iloc[0]
             print(
                 f"Warning: Duplicate entries found for patient {patient_id}, "
                 f"Result Name: {result_name}, Date: {row['lr_blood_draw_date']} {row['lr_blood_draw_time']}. "
-                f"Keeping latest entry with Reported Date: {kept_date}"
+                f"Keeping latest entry with Collected Date: {kept_date}"
             )
 
     # --- Pivot ---
@@ -146,7 +146,7 @@ def main(input_file: str, lookup_file: str, output_file: str):
     lookup = load_csv_safely(lookup_file)
 
     # Validate
-    required_cols = ['Patient ID', 'Reported Date', 'Result Name', 'Result Value']
+    required_cols = ['Patient ID', 'Collected Date', 'Result Name', 'Result Value']
     for col in required_cols:
         if col not in df.columns:
             raise ValueError(f"Missing required column in input CSV: {col}")
@@ -166,8 +166,8 @@ def main(input_file: str, lookup_file: str, output_file: str):
     all_redcap_cols = list(lookup['redcap_col'])
 
     # Split dates
-    df['Reported Date'] = df['Reported Date'].fillna('')
-    df[['lr_blood_draw_date', 'lr_blood_draw_time']] = df['Reported Date'].str.split(' ', n=1, expand=True)
+    df['Collected Date'] = df['Collected Date'].fillna('')
+    df[['lr_blood_draw_date', 'lr_blood_draw_time']] = df['Collected Date'].str.split(' ', n=1, expand=True)
 
     # Clean results
     df['Result Value'] = df['Result Value'].fillna('')
